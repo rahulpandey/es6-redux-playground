@@ -1,0 +1,93 @@
+$colorPrimary: #424242;
+$colorPrimaryDark: #212121;
+$colorAccent: #ffe082;
+$height: 120px;
+$width: 120px;
+$border: 10px;
+$textColorPrimary: #fff;
+$defaultPadding: 16px;
+$shadowColor: rgba(193, 188, 188, 0.8);
+@import url("https://fonts.googleapis.com/css?family=Abel");
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: $colorPrimary;
+  font-family: "Abel", sans-serif;
+}
+#app {
+  color: $textColorPrimary;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+
+.item-center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  position: fixed;
+  text-align: center;
+}
+.loader {
+  border: $border solid $colorAccent;
+  border-top: $border solid $colorPrimary;
+  border-radius: 50%;
+  width: $height;
+  height: $width;
+  display: flex;
+  animation: spin 2s linear infinite;
+}
+h1 {
+  font-size: 2em;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-auto-rows: 1fr;
+  grid-row-gap: 24px;
+  align-items: stretch;
+  padding-top: $defaultPadding;
+  padding-bottom: $defaultPadding;
+}
+.grid img {
+  display: -webkit-box;
+  border: 1px solid transparent;
+  box-shadow: 2px 2px 6px 0px $shadowColor;
+  max-width: 100%;
+  border-radius: $border;
+}
+.row {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.desc {
+  max-width: 260px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: $border;
+  font-size: 1.3em;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
